@@ -1,6 +1,6 @@
-const fs = require("fs");
-const path = require("path");
-const { v4: uuid } = require("uuid");
+const fs = require("fs"); //Way of working with the file system
+const path = require("path"); //Provides utilities for working with file and directory paths
+const { v4: uuid } = require("uuid"); //Generating universally unique identifiers 
 
 const dirCodes = path.join(__dirname, "codes");
 

@@ -1,14 +1,10 @@
 const Job = require("../models/Job");
-const router = require("express").Router();
+const router = require("express").Router(); //Used to create the API's routes
 const { addJobToQueue, addSubmitToQueue } = require("../jobQueue");
 const { generateFile } = require("../generateFile");
 const verify = require("../middleware/verify");
-const fs = require("fs");
-const http = require('http');
-const path = require("path");
 
 // Code Related Route
-
 router.post("/run", async (req, res) => {
   let { language = "cpp", code, userInput } = req.body;
 
@@ -87,24 +83,21 @@ router.get("/submission/:id", verify, async (req, res) => {
 });
 
 // Download Submission
-
 router.get('/download/:id', async (req, res) => {
   const id = req.params.id
 
-  if(!id) return res.status(400).json("Missing required fields")
+  if (!id) return res.status(400).json("Missing required fields")
 
   try {
     const job = await Job.findById(id)
-    if(!job) {
+    if (!job) {
       return res.status(400).json('File not found')
     }
     res.download(job.filepath)
   } catch (error) {
     return res.status(500).json(error)
   }
-  
+
 })
-
-
 
 module.exports = router;

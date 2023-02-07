@@ -1,12 +1,12 @@
-const express = require("express");
-const dotenv = require("dotenv");
-const passport = require("passport");
-const mongoose = require("mongoose");
+const express = require("express"); //Node.js web application framework
+const dotenv = require("dotenv"); //For security purposes
+const passport = require("passport"); //Authentication middleware for Node.js
+const mongoose = require("mongoose"); //MongoDB object modeling tool
 dotenv.config();
-const MongoStore = require("connect-mongo");
-const cors = require("cors");
+const MongoStore = require("connect-mongo"); //MongoDB-based session store for Connect and Express
+const cors = require("cors"); //Connect/Express middleware that can be used to enable CORS with various options
 const app = express();
-const session = require("express-session");
+const session = require("express-session"); //Create and manage a session middleware
 
 require("./config/passport")(passport);
 
@@ -39,7 +39,7 @@ mongoose.connect(
   () => console.log("DB Connected")
 );
 
-
+//routes
 app.use('/api/code', require('./routes/code'))
 app.use('/api/problem', require('./routes/problem'))
 app.use('/api/auth', require('./routes/auth'))

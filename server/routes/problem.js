@@ -2,8 +2,9 @@ const router = require("express").Router();
 const Problem = require("../models/Problem");
 const verify = require("../middleware/verify");
 
-// Problem Related Route
+//Route
 
+//Add the problem
 router.post("/add",verify, async (req, res) => {
   const { testcase, detail } = req.body;
 
@@ -24,6 +25,7 @@ router.post("/add",verify, async (req, res) => {
   }
 });
 
+//Edit the particular problem
 router.put("/edit/:id",verify, async (req, res) => {
   const { testcase, detail } = req.body;
   const id = req.params.id
@@ -44,6 +46,7 @@ router.put("/edit/:id",verify, async (req, res) => {
   }
 });
 
+//Delete the particular problem
 router.delete("/delete/:id",verify, async (req, res) => {
   const id = req.params.id
 
@@ -61,6 +64,7 @@ router.delete("/delete/:id",verify, async (req, res) => {
   }
 });
 
+//Get all the problems together
 router.get("/", async (req, res) => {
   try {
     const data = await Problem.find();
@@ -71,6 +75,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+//Get the particular problem
 router.get("/:id", async (req, res) => {
   try {
     const data = await Problem.findById(req.params.id);

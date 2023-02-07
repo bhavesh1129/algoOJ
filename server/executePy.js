@@ -1,4 +1,4 @@
-const { execSync } = require("child_process");
+const { execSync } = require("child_process"); //Provides the ability to spawn new processes, execute shell commands, and communicate with them
 const path = require("path");
 
 

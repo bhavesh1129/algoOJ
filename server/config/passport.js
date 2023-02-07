@@ -1,5 +1,4 @@
-const GoogleStrategy = require("passport-google-oauth20").Strategy;
-const mongoose = require("mongoose");
+const GoogleStrategy = require("passport-google-oauth20").Strategy; //Passport strategy for authenticating with Google using the OAuth 2.0 API.
 const User = require("../models/User");
 
 module.exports = function (passport) {

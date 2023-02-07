@@ -1,6 +1,6 @@
-## SimpleOJ
+## algoOJ
 
-SimpleOJ is a simple online-judge by which user can add programming problems and solve them.
+algoOJ is a simple online-judge by which user can add programming problems and solve them.
 **Only supports C, C++, Python language.**
 
 

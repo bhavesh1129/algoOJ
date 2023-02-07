@@ -20,7 +20,7 @@ export default function Navbar() {
       <div className="flex items-center font-mono h-full px-12 justify-between z-50">
         <h1 className="text-3xl font-black text-slate-200 z-50">
           <Link to={"/"} className="text-inherit">
-            SimpleOJ
+            algoOJ
           </Link>
         </h1>
         <div className="flex items-center z-50">

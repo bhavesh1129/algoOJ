@@ -1,4 +1,4 @@
-const { execSync } = require("child_process");
+const { execSync } = require("child_process"); //'execSync' is used to run shell commands synchronously
 const fs = require("fs");
 const path = require("path");
 
@@ -9,7 +9,7 @@ if (!fs.existsSync(outputPath)) {
 }
 
 const executeCpp = (filepath, userInput) => {
-  const jobId = path.basename(filepath).split(".")[0];
+  const jobId = path.basename(filepath).split(".")[0]; //provide the name of file which we want to execute (i.e. 6d13b37e-c678-4368-b36e-61d05b5d0bd3.cpp -> 6d13b37e-c678-4368-b36e-61d05b5d0bd3)
   const outPath = path.join(outputPath, `${jobId}.out`);
  
   const child = execSync(

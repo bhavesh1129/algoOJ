@@ -1,17 +1,14 @@
-const Queue = require("bull");
-const moment = require("moment");
-const Job = require("./models/Job");
-const { executeCpp } = require("./executeCpp");
-const { executePy } = require("./executePy");
-const Problem = require("./models/Problem");
+const Queue = require("bull"); //A fast, efficient, and flexible Redis-based job queue for Node.js.
+const moment = require("moment"); //A lightweight JavaScript date library for parsing, validating, manipulating, and formatting dates.
+const Job = require("./models/Job"); //Exports a Mongoose schema for a job, which represents a user's code submission.
+const { executeCpp } = require("./executeCpp"); //Contain functions to execute C++ code.
+const { executePy } = require("./executePy"); //contain functions to execute Python code.
+const Problem = require("./models/Problem"); //Mongoose schema for a problem, which represents a coding challenge.
 
 // For running code with sample user input
-
-
 const jobQueue = new Queue("job-runner-queue", {
-  redis: { host: "redis", port: 6379,  }
+  redis: { host: "redis", port: 6379, }
 });
-
 
 jobQueue.process(async ({ data }) => {
   const jobId = data.id;
@@ -55,7 +52,6 @@ const addJobToQueue = async (jobId) => {
 };
 
 // For submitting code and check testcase
-
 const submitQueue = new Queue("job-submit-queue", {
   redis: { host: "redis", port: 6379 },
 });
@@ -88,10 +84,8 @@ submitQueue.process(async ({ data }) => {
           output = executeCpp(job.filepath, item.input);
         else output = executePy(job.filepath, item.input);
 
-
         let outputUser = output.trim();
         let outputTestcase = item.output.trim()
-
 
         const executionTime = end.diff(start, "seconds", true);
         if (executionTime > problem.timelimit) {
