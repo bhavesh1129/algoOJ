@@ -4,6 +4,7 @@ import { asyncLogin, asyncLogout } from "../store/authSlice";
 import { RootState } from "../store/store";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import { MdNoteAdd } from "react-icons/md";
+import { FaGraduationCap } from "react-icons/fa";
 
 export default function Navbar() {
   const user = useSelector((state: RootState) => state.auth.user);
@@ -19,8 +20,8 @@ export default function Navbar() {
     <div className="w-screen relative py-2 z-50">
       <div className="flex items-center font-mono h-full px-12 justify-between z-50">
         <h1 className="text-3xl font-black text-slate-200 z-50">
-          <Link to={"/"} className="text-inherit">
-            algoOJ
+          <Link to={"/"} className="flex items-center text-inherit">
+            <FaGraduationCap className="h-12 w-12 p-1 border-2 rounded-lg" />&nbsp;algoOJ
           </Link>
         </h1>
         <div className="flex items-center z-50">
