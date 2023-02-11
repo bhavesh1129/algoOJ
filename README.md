@@ -31,4 +31,3 @@ Don't know how to calculate the time complexity and memory complexity of a runni
    ```
    docker-compose up
    ```
-4. If you need any help or information, feel free to knock me in <a href="https://linkedin.com/in/ahnafhasan144">LinkedIn</a>
