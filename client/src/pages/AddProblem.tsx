@@ -99,7 +99,7 @@ export default function AddProblem() {
         {problem && editDetails.edit === "true" && editDetails.problemId ? (
           ""
         ) : (
-          <p className="text-sm italic text-gray-500 my-2">
+          <p className="font-mono text-sm italic text-gray-500 my-2">
             Get started by providing the initial details needed to create a
             problem.
           </p>
@@ -108,7 +108,7 @@ export default function AddProblem() {
         {/* Problem Details */}
         <div className="mt-8 space-y-8">
           <div className="flex">
-            <p className="w-48 min-w-fit">Problem Slug</p>
+            <p className="font-mono font-semibold w-48 min-w-fit">Problem Slug</p>
             <input
               value={problemDetail.slug}
               onChange={(e) =>
@@ -121,7 +121,7 @@ export default function AddProblem() {
             />
           </div>
           <div className="flex">
-            <p className="w-48 min-w-fit">Problem Name</p>
+            <p className="font-mono font-semibold w-48 min-w-fit">Problem Name</p>
             <input
               value={problemDetail.title}
               onChange={(e) =>
@@ -134,7 +134,7 @@ export default function AddProblem() {
             />
           </div>
           <div className="flex items-start">
-            <p className="w-48 min-w-fit">Description</p>
+            <p className="font-mono font-semibold w-48 min-w-fit">Description</p>
             <textarea
               value={problemDetail.desc}
               onChange={(e) =>
@@ -147,7 +147,7 @@ export default function AddProblem() {
             />
           </div>
           <div className="flex items-start">
-            <p className="w-48 min-w-fit">Problem Statement</p>
+            <p className="font-mono font-semibold w-48 min-w-fit">Problem Statement</p>
             <div className="flex-grow max-w-[880px]">
               <MDEditor
                 value={problemDetail.statement}
@@ -159,7 +159,7 @@ export default function AddProblem() {
             </div>
           </div>
           <div className="flex items-start">
-            <p className="w-48 min-w-fit">Input Format</p>
+            <p className="font-mono font-semibold w-48 min-w-fit">Input Format</p>
             <div className="flex-grow  max-w-[880px]">
               <MDEditor
                 value={problemDetail.input}
@@ -174,7 +174,7 @@ export default function AddProblem() {
             </div>
           </div>
           <div className="flex items-start">
-            <p className="w-48 min-w-fit">Output Format</p>
+            <p className="font-mono font-semibold w-48 min-w-fit">Output Format</p>
             <div className="flex-grow  max-w-[880px]">
               <MDEditor
                 value={problemDetail.output}
@@ -189,7 +189,7 @@ export default function AddProblem() {
             </div>
           </div>
           <div className="flex items-start">
-            <p className="w-48 min-w-fit">Constraints</p>
+            <p className="font-mono font-semibold w-48 min-w-fit">Constraints</p>
             <div className="flex-grow  max-w-[880px]">
               <MDEditor
                 value={problemDetail.constraints}

@@ -6,6 +6,7 @@ import MDEditor from "@uiw/react-md-editor";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { asyncProblemDelete } from "../store/ProblemSlice";
+import { IoIosCopy } from "react-icons/io";
 
 export default function ProblemStatement() {
   const problem = useSelector(
@@ -36,11 +37,11 @@ export default function ProblemStatement() {
   };
 
   const handleDelete = () => {
-    if(problem) dispatch(asyncProblemDelete(problem?._id) as any)
+    if (problem) dispatch(asyncProblemDelete(problem?._id) as any)
   }
 
   return (
-    <div className="relative">
+    <div className="relative font-sans">
       {!loading ? (
         <>
           <div className="absolute right-0 flex space-x-2">
@@ -114,10 +115,10 @@ export default function ProblemStatement() {
                   <p className="whitespace-pre-wrap bg-slate-300 p-4 rounded font-mono text-lg relative">
                     {item.input}
                     <button
-                      className="absolute top-0 right-0 font-mono text-xs bg-transparent text-black border border-black p-1 px-2 rounded hover:text-black hover:bg-white font-bold"
+                      className="flex items-center absolute top-0 right-0 font-mono text-xs bg-transparent text-black border border-black p-1 px-2 rounded hover:text-black hover:bg-white font-bold"
                       onClick={() => copyUserInput(item.input)}
                     >
-                      COPY
+                      COPY&nbsp;<IoIosCopy />
                     </button>
                   </p>
                 </div>

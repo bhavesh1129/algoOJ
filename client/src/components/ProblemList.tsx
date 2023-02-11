@@ -25,11 +25,11 @@ export default function ProblemList() {
               onClick={() => navigate(`/problem/${item._id}`)}
             >
               <div>
-                <h2 className="text-xl m-0 hover:underline cursor-pointer capitalize">
+                <h2 className="font-mono text-xl m-0 hover:underline cursor-pointer capitalize">
                   {item.title}
                 </h2>
                 <p
-                  className="m-0 max-w-2xl mt-2"
+                  className="font-mono m-0 max-w-2xl mt-2"
                   style={{ wordSpacing: "5px" }}
                 >
                   {item.desc}

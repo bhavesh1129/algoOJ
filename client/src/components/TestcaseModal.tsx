@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import rehypeSanitize from "rehype-sanitize";
 import { addTestcase } from "../store/ProblemSlice";
+import { IoMdCloseCircle, IoMdAddCircleOutline, IoMdAddCircle } from "react-icons/io";
 import { RootState } from "../store/store";
 
 export default function TestcaseModal() {
@@ -19,16 +20,16 @@ export default function TestcaseModal() {
   const handleAdd = () => {
     dispatch(addTestcase(value));
     setVisible(false)
-    setValue({input: '', output: '', sample: false, explanation: ''})
+    setValue({ input: '', output: '', sample: false, explanation: '' })
   };
 
   return (
     <div>
       <button
         onClick={() => setVisible(true)}
-        className="outline-none border shadow bg-slate-100 text-gray-700 border-slate-600 rounded-sm font-mono font-semibold px-5 py-2"
+        className="flex items-center outline-none border shadow bg-slate-100 text-gray-700 border-slate-600 rounded-sm font-mono font-semibold px-5 py-2"
       >
-        Add Testcase
+        Add Testcase&nbsp;<IoMdAddCircleOutline />
       </button>
       <Modal
         scroll
@@ -38,7 +39,7 @@ export default function TestcaseModal() {
         {...bindings}
       >
         <Modal.Header>
-          <h1 className="text-xl">Add Custom Testcase</h1>
+          <h1 className="font-sans text-xl">Add Custom Testcase</h1>
         </Modal.Header>
         <Modal.Body>
           <div className="flex flex-col font-mono font-semibold">
@@ -56,6 +57,7 @@ export default function TestcaseModal() {
             ></textarea>
           </div>
           <Checkbox
+            className="font-sans"
             isSelected={value.sample}
             color="primary"
             onChange={(e) => setValue({ ...value, sample: e.valueOf() })}
@@ -79,11 +81,11 @@ export default function TestcaseModal() {
           )}
         </Modal.Body>
         <Modal.Footer>
-          <Button auto flat color="error" onClick={() => setVisible(false)}>
-            Close
+          <Button auto flat color="error" onClick={() => setVisible(false)} className="font-sans flex items-center">
+            Close&nbsp;<IoMdCloseCircle />
           </Button>
-          <Button auto onClick={handleAdd}>
-            Add
+          <Button auto onClick={handleAdd} className="font-sans flex items-center">
+            Add&nbsp;<IoMdAddCircle />
           </Button>
         </Modal.Footer>
       </Modal>

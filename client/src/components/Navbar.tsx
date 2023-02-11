@@ -1,9 +1,9 @@
-import { Avatar } from "@nextui-org/react";
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { asyncLogin, asyncLogout } from "../store/authSlice";
 import { RootState } from "../store/store";
+import { AiFillGoogleCircle } from "react-icons/ai";
+import { MdNoteAdd } from "react-icons/md";
 
 export default function Navbar() {
   const user = useSelector((state: RootState) => state.auth.user);
@@ -26,24 +26,24 @@ export default function Navbar() {
         <div className="flex items-center z-50">
           <Link
             to={"/create"}
-            className="mr-8 p-1 px-3 border border-slate-300 rounded-sm text-white hover:bg-white hover:text-black"
+            className="flex items-center font-semibold mr-8 p-1 px-3 border border-slate-300 rounded-sm text-white hover:bg-white hover:text-black"
           >
-            Add Problem
+            Add Problem&nbsp;<MdNoteAdd />
           </Link>
           {user && (
             <div className="flex flex-col items-center justify-center cursor-pointer" onClick={handleLogout}>
-              <img src={user.image} alt="" className="w-8 h-8 rounded-full object-cover object-center" />
-              <p className="m-0 text-white text-sm hover:underline">{user.displayName}</p>
+              <img src={user.image} alt="user image" className="shadow-sm shadow-white w-8 h-8 rounded-full object-cover object-center" />
+              <p className="m-0 font-sans text-white text-sm hover:underline">{user.displayName}</p>
             </div>
           )}
           {!user && (
-            <button className="p-1 px-3 bg-white rounded" onClick={handleLogin}>
-              Login
+            <button className="flex items-center hover:bg-gray-400 font-semibold p-1 px-3 bg-white rounded" onClick={handleLogin}>
+              Login&nbsp;<AiFillGoogleCircle />
             </button>
           )}
         </div>
       </div>
-      <div className="absolute w-full h-full bg-[#322b39] top-0 -z-1"></div>
+      <div className="absolute w-full h-full bg-gray-900 top-0 -z-1"></div>
     </div>
   );
 }

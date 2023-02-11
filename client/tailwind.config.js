@@ -3,8 +3,8 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      'sans': ['"Mukta"'],
-      'mono': ['"Ubuntu Mono"']
+      'sans': ["Poppins", "sans-serif"],
+      'mono': ["Poppins", "sans-serif"]
     }
   },
   plugins: [],

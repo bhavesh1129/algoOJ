@@ -10,6 +10,7 @@ import AllSubmission from "../components/AllSubmission";
 import ProblemEditor from "../components/ProblemEditor";
 import ProblemStatement from "../components/ProblemStatement";
 import { asyncSingleProblemGet } from "../store/ProblemSlice";
+import { TbFiles, TbFileDescription } from "react-icons/tb";
 import { RootState } from "../store/store";
 
 function ProblemPage() {
@@ -28,26 +29,24 @@ function ProblemPage() {
       <div className="flex-grow h-screen overflow-y-auto sc1 problemPage pb-2 relative">
         <div className="flex items-center font-mono font-bold justify-around fixed top-0 z-20 bg-[whitesmoke] shadow  h-full flex-col w-10">
           <button
-            className={`h-1/2 w-full relative py-2 ${
-              drawer === "submission" && "shadow bg-gray-300 rounded "
-            }`}
+            className={`h-1/2 w-full relative py-2 ${drawer === "submission" && "shadow bg-gray-300 rounded "
+              }`}
             // onClick={() => dispatch(setDrawer("description"))}
             onClick={() => navigate(`/problem/${location}?drawer=description`)}
           >
-            <span className="absolute -rotate-90 font-bold font-sans left-1/2 -translate-x-1/2">
-              Description
+            <span className="flex items-center absolute -rotate-90 font-bold font-sans left-1/2 -translate-x-1/2">
+              Description&nbsp;<TbFileDescription />
             </span>
           </button>
           <button
-            className={`h-1/2 w-full relative py-2 ${
-              (drawer === "description" || !drawer) &&
+            className={`h-1/2 w-full relative py-2 ${(drawer === "description" || !drawer) &&
               "shadow bg-gray-300 rounded"
-            }`}
+              }`}
             // onClick={() => dispatch(setDrawer("submission"))}
             onClick={() => navigate(`/problem/${location}?drawer=submission`)}
           >
-            <span className="absolute font-bold -rotate-90 font-sans left-1/2 -translate-x-1/2">
-              Submission
+            <span className="flex items-center absolute font-bold -rotate-90 font-sans left-1/2 -translate-x-1/2">
+              Submissions&nbsp;<TbFiles />
             </span>
           </button>
         </div>

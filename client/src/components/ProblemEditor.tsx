@@ -8,6 +8,9 @@ import { useGetProblemStatusQuery } from "../store/services/ProblemStatus";
 import { RootState } from "../store/store";
 import Editor from "./Editor";
 import SubmissionCode from "./SubmissionCode";
+import { BiRun } from "react-icons/bi";
+import { IoCheckmarkDoneCircle } from "react-icons/io5";
+
 
 export default function ProblemEditor() {
   const [bottomDrawer, setBottomDrawer] = useState("input");
@@ -31,7 +34,7 @@ export default function ProblemEditor() {
   useEffect(() => {
     setJobId(JobId);
   }, [JobId]);
- 
+
   // Status polling
   const problemData = useGetProblemStatusQuery(
     jobId,
@@ -89,7 +92,7 @@ export default function ProblemEditor() {
   };
 
   return (
-    <div className="min-w-[45%] border problemPage border-r-0 pr-0 pb-0 p-3 flex flex-col overflow-hidden">
+    <div className="font-sans min-w-[45%] border problemPage border-r-0 pr-0 pb-0 p-3 flex flex-col overflow-hidden">
       {(drawer === "description" || !drawer) && (
         <>
           <div className="">
@@ -97,26 +100,23 @@ export default function ProblemEditor() {
           </div>
           <div className="bg-gray-100 text-sm text-gray-700 space-x-4 p-2">
             <button
-              className={`${
-                bottomDrawer === "input" && "bg-white shadow"
-              } p-2 px-4 rounded-md`}
+              className={`${bottomDrawer === "input" && "bg-white shadow"
+                } p-2 px-4 rounded-md`}
               onClick={() => setBottomDrawer("input")}
             >
               Custom Input
             </button>
             <button
-              className={`${
-                bottomDrawer === "output" && "bg-white shadow"
-              } p-2 px-4 rounded-md`}
+              className={`${bottomDrawer === "output" && "bg-white shadow"
+                } p-2 px-4 rounded-md`}
               disabled={!output}
               onClick={() => setBottomDrawer("output")}
             >
               Output
             </button>
             <button
-              className={`${
-                bottomDrawer === "result" && "bg-white shadow"
-              } p-2 px-4 rounded-md`}
+              className={`${bottomDrawer === "result" && "bg-white shadow"
+                } p-2 px-4 rounded-md`}
               onClick={() => setBottomDrawer("result")}
             >
               Code Result
@@ -131,15 +131,14 @@ export default function ProblemEditor() {
               ></textarea>
             ) : bottomDrawer === "result" ? (
               <div
-                className={`bg-white flex-grow w-full border ${
-                  verdict === "ac"
+                className={`bg-white flex-grow w-full border ${verdict === "ac"
                     ? "border-green-600"
                     : verdict === "wa"
-                    ? "border-red-600"
-                    : verdict === "tle"
-                    ? "border-red-800"
-                    : "border-slate-700"
-                } outline-none p-2 text-xl grid place-items-center font-bold rounded-sm shadow`}
+                      ? "border-red-600"
+                      : verdict === "tle"
+                        ? "border-red-800"
+                        : "border-slate-700"
+                  } outline-none p-2 text-xl grid place-items-center font-bold rounded-sm shadow`}
               >
                 {verdict === "ac" && (
                   <span className="text-green-600">ACCPETED</span>
@@ -174,18 +173,18 @@ export default function ProblemEditor() {
                 )}
               </div>
             )}
-            <div className="space-x-4 text-sm mt-3">
+            <div className="flex items-center space-x-4 text-sm mt-3">
               <button
-                className="p-2 shadow-md  px-8 border bg-white rounded-lg"
+                className="flex items-center font-bold p-2 shadow-md  px-8 border bg-white rounded-lg hover:bg-gray-200 hover:border-2 hover:border-gray-900"
                 onClick={handleRun}
               >
-                Run
+                Run&nbsp;<BiRun />
               </button>
               <button
-                className="p-2 shadow-md font-semibold px-8 border bg-slate-600 text-white rounded-lg"
+                className="flex items-center p-2 shadow-md font-semibold px-8 border bg-slate-600 hover:bg-gray-200 hover:text-black text-white rounded-lg"
                 onClick={handleSubmit}
               >
-                Submit
+                Submit&nbsp;<IoCheckmarkDoneCircle/>
               </button>
             </div>
           </div>

@@ -33,11 +33,18 @@ jobQueue.process(async ({ data }) => {
 
     return true;
   } catch (err) {
-    job["completedAt"] = new Date();
-    job["status"] = "error";
-    job["output"] = err;
-    await job.save();
-    throw Error(err);
+    if (err.code === 'ENOENT') {
+      job["completedAt"] = new Date();
+      job["status"] = "error";
+      job["output"] = "File not found";
+      await job.save();
+    } else {
+      job["completedAt"] = new Date();
+      job["status"] = "error";
+      job["output"] = err;
+      await job.save();
+      throw Error(err);
+    }
   }
 });
 
