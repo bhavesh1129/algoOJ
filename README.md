@@ -1,12 +1,9 @@
 ## algoOJ
 
-algoOJ is a simple online-judge by which user can add programming problems and solve them.
-**Only supports C, C++, Python language.**
-
 ### Description📄:
 The MERN Stack Online Judge Project is a comprehensive coding platform designed to challenge and showcase your coding abilities. Built on the powerful MERN (MongoDB, Express, React, Node.js) stack, this project offers a user-friendly interface, secure user authentication, question submission, solution verification, and more. Our solution is highly responsive, using CSS and Tailwind CSS to style our frontend, Material UI to create reusable UI components, and Redux as our state management library. Take on the challenge and showcase your programming prowess with our MERN Stack Online Judge Project.
 
-### What An User Can Do?
+### What An User Can Do?🤔💭
 Welcome to the `MERN Stack Online Judge Project`, where coding enthusiasts can unleash their skills and creativity. As a user, you have a plethora of features at your fingertips that allow you to push your limits and unlock your true coding potential.
 
   - First and foremost, you can easily log in using your `Google` account credentials through `PassportJS` authentication. With just a few clicks, you can start exploring the platform and experiencing all it has to offer.
@@ -20,14 +17,14 @@ Welcome to the `MERN Stack Online Judge Project`, where coding enthusiasts can u
 With so many exciting features available, the `MERN Stack Online Judge Project` is the perfect platform to hone your skills, challenge yourself, and connect with other coders from around the world. 
 So why wait? Sign up today and start exploring all the possibilities!
 
-### How do I Run C, C++, Python Code?
+### How do I Run C, C++, Python Code?🧑🏻‍💻🏃🏻‍♂️
 Running `C, C++, and Python` code on the server-side can be a challenging task. To achieve this in our `MERN Stack Online Judge Project`, we used the powerful `child-process` module of `Node.js` to run code in the background. Although there may be other ways to run code on the backend, this approach has proven to be efficient and reliable.
 
 To execute a program, the user submits the code as a string in the programming language of their choice. The server then takes the user's code, compiles and runs it using the `child-process module`. This module runs the code in a separate process, ensuring that it doesn't block the server's main event loop. The child process executes the code and sends back the output to the server, which then returns it to the user.
 
 Our approach allows the user to test and submit code written in `C, C++, and Python`, making it a versatile solution for our online judge platform. While there may be other ways to run code on the backend, using child-process has proven to be a reliable and efficient way to execute code on the server-side.
 
-### Technology Used
+### Technology Used⚙️🪛
 Our `MERN Stack Online Judge Project` is built using the latest technologies and tools, making it a robust and reliable solution for online judging.
 
   - For the `frontend`, we utilized the power of `ReactJS, and Typescript` to create a highly responsive and user-friendly UI. `ReactJS` is a popular and widely used `JavaScript` library that provides developers with the ability to create highly interactive and reusable UI components.
