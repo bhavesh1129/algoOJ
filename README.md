@@ -26,6 +26,9 @@ To execute a program, the user submits the code as a string in the programming l
 
 Our approach allows the user to test and submit code written in `C, C++, and Python`, making it a versatile solution for our online judge platform. While there may be other ways to run code on the backend, using child-process has proven to be a reliable and efficient way to execute code on the server-side.
 
+### Blueprint of the project🧬
+<img src = "https://github.com/bhavesh1129/AlgoUniversity-Online-Judge/blob/master/Online%20Judge%20BluePrint.png" />
+
 ### Technology Used⚙️🪛
 Our `MERN Stack Online Judge Project` is built using the latest technologies and tools, making it a robust and reliable solution for online judging.
 
