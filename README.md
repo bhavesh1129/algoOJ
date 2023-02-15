@@ -1,4 +1,4 @@
-## algoOJ
+<img src = "https://i.ibb.co/DzspmYb/logo.png" width="100%" height="100%"/>
 
 ### Report Link(Google Doc)🔗: https://bit.ly/3JuHTiZ
 
