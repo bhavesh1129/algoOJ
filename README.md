@@ -1,6 +1,7 @@
-# algoOJ (An Online-Judge🖥️)
+## algoOJ
 
-### Report Link(Google Doc)🔗: https://bit.ly/3JuHTiZ
+algoOJ is a simple online-judge by which user can add programming problems and solve them.
+**Only supports C, C++, Python language.**
 
 ### Description📄:
 The MERN Stack Online Judge Project is a comprehensive coding platform designed to challenge and showcase your coding abilities. Built on the powerful MERN (MongoDB, Express, React, Node.js) stack, this project offers a user-friendly interface, secure user authentication, question submission, solution verification, and more. Our solution is highly responsive, using CSS and Tailwind CSS to style our frontend, Material UI to create reusable UI components, and Redux as our state management library. Take on the challenge and showcase your programming prowess with our MERN Stack Online Judge Project.
@@ -47,4 +48,4 @@ Our `MERN Stack Online Judge Project` is built using the latest technologies and
 3. Run the following command and you are good to go.
    ```
    docker-compose up
-   ``` -->
+   ```
