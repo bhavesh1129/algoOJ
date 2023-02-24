@@ -13,7 +13,7 @@ const executeCpp = (filepath, userInput) => {
   const outPath = path.join(outputPath, `${jobId}.out`);
  
   const child = execSync(
-    `g++ ${filepath} -o ${outPath} && cd ${outputPath} && ./${jobId}.out`,
+    `g++ ${filepath} -o ${outPath} && cd ${outputPath} && .\\${jobId}.exe`,
     { input: userInput }
   );
 
